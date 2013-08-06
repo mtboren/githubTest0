@@ -35,7 +35,7 @@ function Copy-VIRole {
     else {
         $strNewVIRoleExpr = 'New-VIRole -Server $DestVCName_str -Name $DestRoleName_str -Privilege (Get-VIPrivilege -Server $DestVCName_str -Id $oSrcVIRole.PrivilegeList){0}' -f $(if ($WhatIf_sw) {" -WhatIf"})
         Invoke-Expression $strNewVIRoleExpr
-    } ## end else
+    }
 } ## end function
 
 
@@ -50,4 +50,7 @@ PS vN:\> Get-VIRole MyNewRole -server vcenter2*
 Name            IsSystem
 ----            --------
 MyNewRole       False
+
+More examples:
+PS vN:\> Get-VIRole MyNewRole -server blahh
 #>
