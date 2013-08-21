@@ -3,7 +3,7 @@ function Copy-VIRole {
 <#    .Description
     Copy a role to another role, either in same vCenter or to a different vCenter. Jul 2013, Matt Boren
     This assumes that connections to source/destination vCenter(s) are already established.  If role of given name already exists in destination vCenter, will stop.
-    Author:  vNugglets.com -- Jul 2013
+    Author:  vNugglets.com -- Jul 2013; posted Aug 2013
     .Example
     Copy-VIRole.ps1 -SrcRoleName SysAdm -DestRoleName SysAdm_copyTest -SrcVCName vcenter.com -DestVCName labvcenter.com
     .Outputs
@@ -51,6 +51,5 @@ Name            IsSystem
 ----            --------
 MyNewRole       False
 
-More examples:
-PS vN:\> Get-VIRole MyNewRole -server blahh
+what else should we do? (took out the "More examples" piece)
 #>
