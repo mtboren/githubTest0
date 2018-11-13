@@ -1,6 +1,7 @@
 githubTest0 Docs!
 ===========
 ### Some docs for the GitHub testing repo
+
 | What | Why |
 |-------|------|
 Add tables | So that stuff looks better
