@@ -33,8 +33,14 @@ function Copy-VIRole {
     if ($null -ne $oDestVIRole) {Write-Warning "VIRole '$DestRoleName_str' already exists in destination vCenter '$DestVCName_str'. Exiting"; exit}
     ## else, create the role
     else {
-        $strNewVIRoleExpr = 'New-VIRole -Server $DestVCName_str -Name $DestRoleName_str -Privilege (Get-VIPrivilege -Server $DestVCName_str -Id $oSrcVIRole.PrivilegeList){0}' -f $(if ($WhatIf_sw) {" -WhatIf"})
-        Invoke-Expression $strNewVIRoleExpr
+        $hshParamForNewVIRole = @{
+            Server $DestVCName_str
+            Name $DestRoleName_str
+            Privilege (Get-VIPrivilege -Server $DestVCName_str -Id $oSrcVIRole.PrivilegeList)
+        } ## end hsh
+        ## use this for now; still need to actually handle this by adding ShoudProcess support for reals
+        if ($WhatIf_sw) {$hshParamForNewVIRole["WhatIf"] = $true}
+        New-VIRole @hshParamForNewVIRole
     }
 } ## end function
 
