@@ -5,3 +5,5 @@ githubTest0
 * working on some md
 * we have branches, now
 * quick update to ReadMe
+
+This repository is for testing things in Git and GitHub.  Here is the added line.
